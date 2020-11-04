@@ -1,3 +1,20 @@
+################################################################################
+#
+# Program:          Group2Project.py
+#
+# Programmers:      Griffin, Domonique
+#                   Mills, Mary
+#
+# Class:            BIFS 619 Systems Level Approaches in Bioinformatics
+#
+# Assignment:       Group 2 Project
+#
+# Purpose:          To parse microarray data to find successful probes.
+#
+# Date Submitted:   Nov. 3, 2020
+#
+################################################################################
+import os
 import numpy as np
 import pandas as pd
 
@@ -6,8 +23,6 @@ import pandas as pd
 #Please note that due to the amount of data, this script will take a few minutes to run
 
 #Save file names as variables for easy typing
-#draftraw = 'smallraw.txt'
-#draftraw2 = 'smallraw2.txt'
 raw1='US10133796_252665223678_S01_GE1_107_Sep09_1_1.txt'
 raw2='US10133796_252665223678_S01_GE1_107_Sep09_1_2.txt'
 raw3='US10133796_252665223678_S01_GE1_107_Sep09_1_3.txt'
@@ -22,7 +37,6 @@ raw11='US10133796_252665223680_S01_GE1_107_Sep09_1_3.txt'
 raw12='US10133796_252665223680_S01_GE1_107_Sep09_1_4.txt'
 
 filelist = (raw1,raw2,raw3,raw4,raw5,raw6,raw7,raw8,raw9,raw10,raw11,raw12)
-#filelist = (draftraw, draftraw2, raw1)
 
 #Create new files to write results to
 proberesultsfile = open('proberesults.txt', 'w+')
@@ -92,12 +106,5 @@ probelistfile.close()
 probesystemlistfile.close()
 
 #Print general results
-print('done!')
+print('Data has been analyzed.')
 print('There were ' + str(len(probenames)) + ' significant probes found')
-
-
-
-#Create new dataframe with counts of how many times each probe was significant 
-#probecounts = pd.DataFrame(correctprobes.SystematicName.value_counts().reset_index().values, columns=['Name', 'AggregateCounts'])
-#probecounts_index = probecounts.sort_index(axis = 0, ascending = True)
-#print(probecounts_index)
